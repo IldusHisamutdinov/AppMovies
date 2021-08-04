@@ -5,6 +5,7 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.simplemoviesapp.BuildConfig
 import com.example.simplemoviesapp.api.RetrofitImpl
 import com.example.simplemoviesapp.details.Resource
 import com.example.simplemoviesapp.models.RemoteMovieDetail
@@ -23,7 +24,7 @@ class MovieDetailsViewModel(
     }
     fun sendServerRequestDate(id: String) {
         liveData.value = Resource.Loading(null)
-        val apiKey = "274f828ad283bd634ef4fc1ee4af255f"
+        val apiKey: String = BuildConfig.MOVIE_API_KEY
         if (apiKey.isBlank()) {
             Resource.Error(Throwable("You need API key"))
         } else {
