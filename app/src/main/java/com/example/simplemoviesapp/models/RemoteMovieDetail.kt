@@ -1,6 +1,8 @@
 package com.example.simplemoviesapp.models
 
 import com.google.gson.annotations.SerializedName
+import java.text.SimpleDateFormat
+import java.util.*
 
 data class RemoteMovieDetail (
     @SerializedName("id") val id: Long,
